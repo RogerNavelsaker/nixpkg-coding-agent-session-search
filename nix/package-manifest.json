@@ -1,0 +1,27 @@
+{
+  "source": {
+    "path": "upstream",
+    "channel": "github-head",
+    "defaultBranch": "main",
+    "version": "0.2.7",
+    "rev": "d403c9e12422665b1a321ee69bc5d4fd2c6a8795",
+    "siblings": {
+      "fast_cmaes": "f7789e8448170b48ca45734e341d07939914e5f7",
+      "franken_agent_detection": "93365dde61b06a95d4e5af61a4d197760aa336e9",
+      "frankensearch": "ccc9063c6d61d5cf11a1b2c6c4f1bf6f40f78aae",
+      "frankensqlite": "55762bb52fcc4f5f47b8d4b3d520b7cf6fc10672"
+    }
+  },
+  "package": {
+    "repo": "coding-agent-session-search",
+    "version": "0.2.7"
+  },
+  "binary": {
+    "name": "cass"
+  },
+  "meta": {
+    "description": "Unified TUI search over local coding agent histories",
+    "homepage": "https://github.com/Dicklesworthstone/coding_agent_session_search",
+    "licenseSpdx": "MIT"
+  }
+}

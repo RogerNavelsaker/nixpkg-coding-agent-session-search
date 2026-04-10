@@ -1,0 +1,78 @@
+[package]
+name = "franken-agent-detection"
+version = "0.1.3"
+edition = "2024"
+rust-version = "1.85"
+license = "MIT"
+description = "Local coding-agent installation detection via filesystem probes"
+repository = "https://github.com/Dicklesworthstone/franken_agent_detection"
+documentation = "https://docs.rs/franken-agent-detection"
+readme = "README.md"
+keywords = ["agent", "detection", "filesystem", "codex", "claude"]
+categories = ["development-tools", "command-line-utilities"]
+
+[dependencies]
+# --- Always-on (detection + connector shared) ---
+serde = { version = "1", features = ["derive"] }
+thiserror = "2"
+chrono = { version = "0.4", features = ["serde"] }
+dirs = "6"
+
+# --- Optional: connector infrastructure ---
+anyhow = { version = "1", optional = true }
+serde_json = { version = "1", optional = true }
+walkdir = { version = "2", optional = true }
+tracing = { version = "0.1", optional = true }
+dotenvy = { version = "0.15", optional = true }
+bloomfilter = { version = "3", optional = true }
+once_cell = { version = "1", optional = true }
+urlencoding = { version = "2", optional = true }
+
+# --- Optional: ChatGPT encrypted conversations ---
+aes-gcm = { version = "0.10", optional = true }
+base64 = { version = "0.22", optional = true }
+
+# --- Optional: Cursor/OpenCode SQLite session databases ---
+rusqlite = { version = "0.38", optional = true, features = ["bundled", "modern_sqlite"] }
+
+# --- Optional: frankensqlite for new connectors (Crush, etc.) ---
+frankensqlite = { git = "https://github.com/Dicklesworthstone/frankensqlite", rev = "e3f57c9a", package = "fsqlite", optional = true }
+
+[features]
+default = []
+# Base connector support: shared deps for all 15 connectors
+connectors = [
+    "dep:anyhow",
+    "dep:serde_json",
+    "dep:walkdir",
+    "dep:tracing",
+    "dep:dotenvy",
+    "dep:bloomfilter",
+    "dep:once_cell",
+]
+# ChatGPT: AES-256-GCM decryption for v2/v3 encrypted conversations
+chatgpt = ["connectors", "dep:aes-gcm", "dep:base64"]
+# Cursor: SQLite database access for state.vscdb
+cursor = ["connectors", "dep:rusqlite", "dep:urlencoding"]
+# OpenCode: SQLite database access for v1.2+ opencode.db
+opencode = ["connectors", "dep:rusqlite", "dep:urlencoding"]
+# Goose: SQLite database access for Goose sessions.db
+goose = ["connectors", "dep:rusqlite", "dep:urlencoding"]
+# Crush: SQLite database access for Charm's Crush agent (uses frankensqlite)
+crush = ["connectors", "dep:frankensqlite"]
+# All connectors enabled
+all-connectors = ["connectors", "chatgpt", "cursor", "opencode", "goose", "crush"]
+
+[dev-dependencies]
+tempfile = "3"
+serial_test = "3"
+
+[lints.rust]
+unsafe_code = "forbid"
+
+[lints.clippy]
+pedantic = { level = "warn", priority = -1 }
+nursery = { level = "warn", priority = -1 }
+module_name_repetitions = "allow"
+missing_errors_doc = "allow"
+missing_panics_doc = "allow"
