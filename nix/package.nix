@@ -1,28 +1,31 @@
-{ bash, lib, lld, makeWrapper, onnxruntime, openssl, perl, pkg-config, rustPlatform }:
+{ bash, fetchFromGitHub, lib, lld, makeWrapper, onnxruntime, openssl, perl, pkg-config, runCommand, rustPlatform }:
 
 let
   manifest = builtins.fromJSON (builtins.readFile ./package-manifest.json);
-  sourceTree = lib.cleanSourceWith {
-    src = ../.;
-    filter = path: type:
-      let
-        base = baseNameOf path;
-        excluded = [
-          ".beads"
-          ".claude"
-          ".git"
-          ".github"
-          "artifacts"
-          "docs"
-          "examples"
-          "result"
-          "screenshots"
-          "scripts"
-          "tests"
-        ];
-      in
-      !(builtins.elem base excluded);
+  upstreamSrc = fetchFromGitHub {
+    owner = manifest.source.owner;
+    repo = manifest.source.repo;
+    rev = manifest.source.rev;
+    hash = manifest.source.hash;
   };
+  frankensqliteSrc = fetchFromGitHub {
+    owner = manifest.source.siblings.frankensqlite.owner;
+    repo = manifest.source.siblings.frankensqlite.repo;
+    rev = manifest.source.siblings.frankensqlite.rev;
+    hash = manifest.source.siblings.frankensqlite.hash;
+  };
+  frankenAgentDetectionSrc = fetchFromGitHub {
+    owner = manifest.source.siblings.franken_agent_detection.owner;
+    repo = manifest.source.siblings.franken_agent_detection.repo;
+    rev = manifest.source.siblings.franken_agent_detection.rev;
+    hash = manifest.source.siblings.franken_agent_detection.hash;
+  };
+  sourceRoot = runCommand "${manifest.binary.name}-${manifest.source.version}-src" { } ''
+    mkdir -p "$out/upstream" "$out/frankensqlite" "$out/franken_agent_detection"
+    cp -R ${upstreamSrc}/. "$out/upstream/"
+    cp -R ${frankensqliteSrc}/. "$out/frankensqlite/"
+    cp -R ${frankenAgentDetectionSrc}/. "$out/franken_agent_detection/"
+  '';
   builtBinary = manifest.binary.upstreamName or manifest.binary.name;
   aliasOutputs = manifest.binary.aliases or [ ];
   licenseMap = {
@@ -49,7 +52,7 @@ in
 rustPlatform.buildRustPackage {
   pname = manifest.binary.name;
   version = manifest.package.version;
-  src = sourceTree;
+  src = sourceRoot;
   sourceRoot = "source/upstream";
 
   cargoLock = {
