@@ -20,11 +20,21 @@ let
     rev = manifest.source.siblings.franken_agent_detection.rev;
     hash = manifest.source.siblings.franken_agent_detection.hash;
   };
-  sourceRoot = runCommand "${manifest.binary.name}-${manifest.source.version}-src" { } ''
-    mkdir -p "$out/upstream" "$out/frankensqlite" "$out/franken_agent_detection"
+  frankensearchSrc = fetchFromGitHub {
+    owner = manifest.source.siblings.frankensearch.owner;
+    repo = manifest.source.siblings.frankensearch.repo;
+    rev = manifest.source.siblings.frankensearch.rev;
+    hash = manifest.source.siblings.frankensearch.hash;
+  };
+  prepSource = runCommand "${manifest.binary.name}-${manifest.source.version}-prep-source" { } ''
+    mkdir -p "$out/upstream" "$out/frankensqlite" "$out/franken_agent_detection" "$out/frankensearch"
     cp -R ${upstreamSrc}/. "$out/upstream/"
     cp -R ${frankensqliteSrc}/. "$out/frankensqlite/"
     cp -R ${frankenAgentDetectionSrc}/. "$out/franken_agent_detection/"
+    cp -R ${frankensearchSrc}/. "$out/frankensearch/"
+
+    # Ensure we are in a clean state and relative paths match Cargo.toml expectations
+    chmod -R +w "$out"
   '';
   builtBinary = manifest.binary.upstreamName or manifest.binary.name;
   aliasOutputs = manifest.binary.aliases or [ ];
@@ -52,8 +62,8 @@ in
 rustPlatform.buildRustPackage {
   pname = manifest.binary.name;
   version = manifest.package.version;
-  src = sourceRoot;
-  sourceRoot = "source/upstream";
+  src = prepSource;
+  sourceRoot = "${prepSource.name}/upstream";
 
   cargoLock = {
     lockFile = ../upstream/Cargo.lock;
