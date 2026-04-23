@@ -5,9 +5,9 @@
     "repo": "coding_agent_session_search",
     "channel": "github-head",
     "defaultBranch": "main",
-    "version": "0.3.6",
-    "rev": "f9e64daac37f7aa3713c6d9f3aea2e9921cd1ae2",
-    "hash": "sha256-q+ZrVP5QyToqQNx2C9LTu5+J8FXnWhjyOghaCVDqORg=",
+    "version": "0.3.7",
+    "rev": "f3c2cceb0ac0f6f6d02dbdff4aecc639b9bdaeeb",
+    "hash": "sha256-SBRoNzpMZhj2svcRpkohhRgdRQnp7cFBhgJ14TtrwOI=",
     "siblings": {
       "franken_agent_detection": {
         "owner": "Dicklesworthstone",
@@ -18,14 +18,14 @@
       "frankensqlite": {
         "owner": "Dicklesworthstone",
         "repo": "frankensqlite",
-        "rev": "8c02a08656709907de8cc7428e50a0364cc96913",
-        "hash": "sha256-7Flr2BqsD4133GUclX2LmtknajIjVeT5/KDs4MYrQq4="
+        "rev": "90243e047c7b89e86f0807aecd77d8713b652f0e",
+        "hash": "sha256-CuaBArEUVQQmutFfrDmgM0Dw53rqKyo42nr2O90YY18="
       }
     }
   },
   "package": {
     "repo": "coding-agent-session-search",
-    "version": "0.3.6"
+    "version": "0.3.7"
   },
   "binary": {
     "name": "cass"
