@@ -26,16 +26,46 @@ let
     rev = manifest.source.siblings.frankensearch.rev;
     hash = manifest.source.siblings.frankensearch.hash;
   };
-  prepSource = runCommand "${manifest.binary.name}-${manifest.source.version}-prep-source" { } ''
-    mkdir -p "$out/upstream" "$out/frankensqlite" "$out/franken_agent_detection" "$out/frankensearch"
+  fastCmaesSrc = fetchFromGitHub {
+    owner = manifest.source.siblings.fast_cmaes.owner;
+    repo = manifest.source.siblings.fast_cmaes.repo;
+    rev = manifest.source.siblings.fast_cmaes.rev;
+    hash = manifest.source.siblings.fast_cmaes.hash;
+  };
+  asupersyncSrc = fetchFromGitHub {
+    owner = manifest.source.siblings.asupersync.owner;
+    repo = manifest.source.siblings.asupersync.repo;
+    rev = manifest.source.siblings.asupersync.rev;
+    hash = manifest.source.siblings.asupersync.hash;
+  };
+  toonRustSrc = fetchFromGitHub {
+    owner = manifest.source.siblings.toon_rust.owner;
+    repo = manifest.source.siblings.toon_rust.repo;
+    rev = manifest.source.siblings.toon_rust.rev;
+    hash = manifest.source.siblings.toon_rust.hash;
+  };
+  frankentuiSrc = fetchFromGitHub {
+    owner = manifest.source.siblings.frankentui.owner;
+    repo = manifest.source.siblings.frankentui.repo;
+    rev = manifest.source.siblings.frankentui.rev;
+    hash = manifest.source.siblings.frankentui.hash;
+  };
+
+  # Phase 1: Gather and prep all sources
+  sourceRoot = runCommand "${manifest.binary.name}-${manifest.source.version}-src" { } ''
+    mkdir -p "$out/upstream" "$out/frankensqlite" "$out/franken_agent_detection" \
+             "$out/frankensearch" "$out/fast_cmaes" "$out/asupersync" \
+             "$out/toon_rust" "$out/frankentui"
     cp -R ${upstreamSrc}/. "$out/upstream/"
     cp -R ${frankensqliteSrc}/. "$out/frankensqlite/"
     cp -R ${frankenAgentDetectionSrc}/. "$out/franken_agent_detection/"
     cp -R ${frankensearchSrc}/. "$out/frankensearch/"
-
-    # Ensure we are in a clean state and relative paths match Cargo.toml expectations
-    chmod -R +w "$out"
+    cp -R ${fastCmaesSrc}/. "$out/fast_cmaes/"
+    cp -R ${asupersyncSrc}/. "$out/asupersync/"
+    cp -R ${toonRustSrc}/. "$out/toon_rust/"
+    cp -R ${frankentuiSrc}/. "$out/frankentui/"
   '';
+
   builtBinary = manifest.binary.upstreamName or manifest.binary.name;
   aliasOutputs = manifest.binary.aliases or [ ];
   licenseMap = {
@@ -62,12 +92,19 @@ in
 rustPlatform.buildRustPackage {
   pname = manifest.binary.name;
   version = manifest.package.version;
-  src = prepSource;
-  sourceRoot = "${prepSource.name}/upstream";
+  src = sourceRoot;
+  sourceRoot = "source/upstream";
 
   cargoLock = {
     lockFile = ../upstream/Cargo.lock;
-    allowBuiltinFetchGit = true;
+    outputHashes = {
+      "asupersync-0.2.9" = "sha256-zjY4G274+1+Hju94jW74APS5cb9jlzz7cOvTzLy6yQA=";
+      "frankensqlite-0.1.2" = "sha256-CuaBArEUVQQmutFfrDmgM0Dw53rqKyo42nr2O90YY18=";
+      "franken-agent-detection-0.1.3" = "sha256-9HUDckRCdL5NT3QtJ5WdWWez6j1JfccKgA7O0YrSiHg=";
+      "frankensearch-0.1.0" = "sha256-4FWFxvUB4c6djekMcVec//5DcAk9w8gpnHTalxCeHSY=";
+      "tru-0.2.1" = "sha256-pW3/clvSw7IAMFFlq4uf7b8qH6Yinu++a3wwP3zuQGs=";
+      "ftui-0.2.1" = "sha256-vDbnVrIDUigoeUen/QfEi9HtTEVRsiqak4Ka4tO5C3Y=";
+    };
   };
 
   cargoBuildFlags =
