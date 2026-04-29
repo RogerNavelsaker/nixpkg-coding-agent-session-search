@@ -1,4 +1,4 @@
-{ bash, fetchFromGitHub, lib, lld, makeWrapper, onnxruntime, openssl, perl, pkg-config, runCommand, rustPlatform }:
+{ bash, fetchFromGitHub, lib, lld, makeWrapper, onnxruntime, openssl, perl, pkg-config, python3, runCommand, rustPlatform }:
 
 let
   manifest = builtins.fromJSON (builtins.readFile ./package-manifest.json);
@@ -51,19 +51,88 @@ let
     hash = manifest.source.siblings.frankentui.hash;
   };
 
-  # Phase 1: Gather and prep all sources
-  sourceRoot = runCommand "${manifest.binary.name}-${manifest.source.version}-src" { } ''
-    mkdir -p "$out/upstream" "$out/frankensqlite" "$out/franken_agent_detection" \
-             "$out/frankensearch" "$out/fast_cmaes" "$out/asupersync" \
-             "$out/toon_rust" "$out/frankentui"
-    cp -R ${upstreamSrc}/. "$out/upstream/"
-    cp -R ${frankensqliteSrc}/. "$out/frankensqlite/"
-    cp -R ${frankenAgentDetectionSrc}/. "$out/franken_agent_detection/"
-    cp -R ${frankensearchSrc}/. "$out/frankensearch/"
-    cp -R ${fastCmaesSrc}/. "$out/fast_cmaes/"
-    cp -R ${asupersyncSrc}/. "$out/asupersync/"
-    cp -R ${toonRustSrc}/. "$out/toon_rust/"
-    cp -R ${frankentuiSrc}/. "$out/frankentui/"
+  # Phase 1: Gather and prep all sources into a unified structure
+  prepSource = runCommand "${manifest.binary.name}-${manifest.source.version}-prep-source" {
+    nativeBuildInputs = [ python3 ];
+  } ''
+    # Work in a temporary directory
+    BUILD_DIR=$(mktemp -d)
+    cd "$BUILD_DIR"
+
+    # Copy all sources
+    cp -R ${upstreamSrc}/. ./
+    mkdir -p siblings
+    cp -R ${frankensqliteSrc}/. ./siblings/frankensqlite/
+    cp -R ${frankenAgentDetectionSrc}/. ./siblings/franken_agent_detection/
+    cp -R ${frankensearchSrc}/. ./siblings/frankensearch/
+    cp -R ${fastCmaesSrc}/. ./siblings/fast_cmaes/
+    cp -R ${asupersyncSrc}/. ./siblings/asupersync/
+    cp -R ${toonRustSrc}/. ./siblings/toon_rust/
+    cp -R ${frankentuiSrc}/. ./siblings/frankentui/
+
+    # Ensure everything is writable
+    chmod -R +w .
+
+    # We use [patch] sections to override git dependencies workspace-wide.
+    # This is critical to avoid workspace inheritance errors! If we used `path = ...` 
+    # directly in `[dependencies]`, Cargo would merge these external crates into our 
+    # workspace and they would fail to find their own `[workspace.package]` configs.
+    
+    # Remove any existing patch sections to avoid conflicts
+    sed -i '/\[patch\."https:\/\/github\.com\/Dicklesworthstone/,$d' Cargo.toml
+    
+    # Append fresh patch sections pointing to our prepped siblings
+    cat >> Cargo.toml <<EOF
+
+[patch."https://github.com/Dicklesworthstone/asupersync"]
+asupersync = { path = "./siblings/asupersync" }
+franken-decision = { path = "./siblings/asupersync/franken_decision" }
+franken-evidence = { path = "./siblings/asupersync/franken_evidence" }
+franken-kernel = { path = "./siblings/asupersync/franken_kernel" }
+
+[patch."https://github.com/Dicklesworthstone/frankensqlite"]
+fsqlite = { path = "./siblings/frankensqlite/crates/fsqlite" }
+fsqlite-types = { path = "./siblings/frankensqlite/crates/fsqlite-types" }
+
+[patch."https://github.com/Dicklesworthstone/franken_agent_detection"]
+franken-agent-detection = { path = "./siblings/franken_agent_detection" }
+
+[patch."https://github.com/Dicklesworthstone/frankensearch"]
+frankensearch = { path = "./siblings/frankensearch/frankensearch" }
+
+[patch."https://github.com/Dicklesworthstone/toon_rust"]
+tru = { path = "./siblings/toon_rust" }
+
+[patch."https://github.com/Dicklesworthstone/frankentui"]
+ftui = { path = "./siblings/frankentui/crates/ftui" }
+ftui-runtime = { path = "./siblings/frankentui/crates/ftui-runtime" }
+ftui-tty = { path = "./siblings/frankentui/crates/ftui-tty" }
+ftui-extras = { path = "./siblings/frankentui/crates/ftui-extras" }
+EOF
+
+    # Patch siblings that have relative paths to other repos
+    # frankensearch/tools/optimize_params/Cargo.toml expects fast_cmaes at ../../../fast_cmaes
+    sed -i 's|\.\./\.\./\.\./fast_cmaes|../../../fast_cmaes|g' siblings/frankensearch/tools/optimize_params/Cargo.toml
+
+    # Downgrade json5 in fsqlite-ext-json to match the older Cargo.lock version
+    sed -i 's|json5 = "1.3"|json5 = "0.4.1"|g' siblings/frankensqlite/crates/fsqlite-ext-json/Cargo.toml
+
+    # Downgrade lru in ftui-text to match the older Cargo.lock version
+    sed -i 's|lru = "0.17.0"|lru = "0.16.4"|g' siblings/frankentui/crates/ftui-text/Cargo.toml
+
+    # Patch Cargo.lock to remove git sources so the Nix vendor script treats them as path dependencies
+    python3 -c '
+import os
+import re
+if os.path.exists("Cargo.lock"):
+    with open("Cargo.lock", "r") as f: content = f.read()
+    content = re.sub(r"source\s*=\s*\"git\+https://github\.com/Dicklesworthstone/[^\"]*\"\n", "", content)
+    with open("Cargo.lock", "w") as f: f.write(content)
+'
+
+    # Move finalized source to $out
+    mkdir -p "$out"
+    cp -R . "$out/"
   '';
 
   builtBinary = manifest.binary.upstreamName or manifest.binary.name;
@@ -92,20 +161,12 @@ in
 rustPlatform.buildRustPackage {
   pname = manifest.binary.name;
   version = manifest.package.version;
-  src = sourceRoot;
-  sourceRoot = "source/upstream";
+  src = prepSource;
 
-  cargoLock = {
-    lockFile = ../upstream/Cargo.lock;
-    outputHashes = {
-      "asupersync-0.2.9" = "sha256-zjY4G274+1+Hju94jW74APS5cb9jlzz7cOvTzLy6yQA=";
-      "frankensqlite-0.1.2" = "sha256-CuaBArEUVQQmutFfrDmgM0Dw53rqKyo42nr2O90YY18=";
-      "franken-agent-detection-0.1.3" = "sha256-9HUDckRCdL5NT3QtJ5WdWWez6j1JfccKgA7O0YrSiHg=";
-      "frankensearch-0.1.0" = "sha256-4FWFxvUB4c6djekMcVec//5DcAk9w8gpnHTalxCeHSY=";
-      "tru-0.2.1" = "sha256-pW3/clvSw7IAMFFlq4uf7b8qH6Yinu++a3wwP3zuQGs=";
-      "ftui-0.2.1" = "sha256-vDbnVrIDUigoeUen/QfEi9HtTEVRsiqak4Ka4tO5C3Y=";
-    };
-  };
+  # By using cargoHash = lib.fakeHash, we trigger a vendoring phase
+  # Since all git dependencies were patched and their sources removed from Cargo.lock,
+  # Cargo will vendor the registry dependencies and use the local paths for the rest.
+  cargoHash = "sha256-6EApfqOydImGkH0sMAH48OQAO5aGyt9uzhPteKff1kY=";
 
   cargoBuildFlags =
     (lib.optionals (manifest.binary ? package) [ "-p" manifest.binary.package ])
