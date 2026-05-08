@@ -6,8 +6,8 @@
     "channel": "github-head",
     "defaultBranch": "main",
     "version": "0.4.2",
-    "rev": "3bc41b7afacbcbb6348f2bc497f08a7235e915e4",
-    "hash": "sha256-Z6ThhLBTnjx54X/OVJG7m/sR6G3BKNUkmffeJYq5qTo=",
+    "rev": "792e97011a686da10953728853d15525350f700c",
+    "hash": "sha256-QEs0LKJrZIySdK/dSKEGXlRc0pHTP+hzpFtdyqHBXGc=",
     "siblings": {
       "franken_agent_detection": {
         "owner": "Dicklesworthstone",
@@ -18,14 +18,14 @@
       "frankensqlite": {
         "owner": "Dicklesworthstone",
         "repo": "frankensqlite",
-        "rev": "953959cbb2b495700c0737d155e6f7c84ce20acc",
-        "hash": "sha256-8+GlSVxxf9g2K2aXH1nG47xFgX7blvuzYXxt4kLVbrY="
+        "rev": "c7bac5ec6f7a13feff9df7bad5b7e9bc0bf1d6f1",
+        "hash": "sha256-s9BKKlxeZ9V0yPH9nWVlDqmiogTAoyBXEfwk3DTmxVg="
       },
       "frankensearch": {
         "owner": "Dicklesworthstone",
         "repo": "frankensearch",
-        "rev": "faafc633e041842b6a383668e168c47fd5693771",
-        "hash": "sha256-d8rlOKHrE3njC8a+cxSzZqbbTy11llaxsyPd2nHUzWo="
+        "rev": "36af1bbef55d4593b20470384dbf2ef978484fe1",
+        "hash": "sha256-wkXSUCWUOOlyi8cQWLuOmw+QaXE1DhoRH/drguwrwyU="
       },
       "fast_cmaes": {
         "owner": "Dicklesworthstone",
@@ -36,8 +36,8 @@
       "asupersync": {
         "owner": "Dicklesworthstone",
         "repo": "asupersync",
-        "rev": "5fb2713eccbb375d0d372d8343fc10ebdd8e2a29",
-        "hash": "sha256-ABNMeYnBa/mh/vI57d3O7t70V+8nJKo7G0XA6pzU+io="
+        "rev": "118f8a586f1e5adb622345b3d0511dfd2693ba90",
+        "hash": "sha256-mhnvj3jqxUJizOHjfp69N4zil5Rfi1ev/X+31kfNlvE="
       },
       "toon_rust": {
         "owner": "Dicklesworthstone",
@@ -48,8 +48,8 @@
       "frankentui": {
         "owner": "Dicklesworthstone",
         "repo": "frankentui",
-        "rev": "782cb918da50bcd8055152acf4da7af57e94e172",
-        "hash": "sha256-AFVeGmW1shpHUAC2TgdaLc/Jzbs30pq03oqQ7Dxoe/A="
+        "rev": "daa57b914ddc6419dac5403d35e0c92cb9cbf2c5",
+        "hash": "sha256-qzQgfQiclW5ddbvbqJv0+eFj7fm8Y/JQEL1Ha9C8hgw="
       }
     }
   },
