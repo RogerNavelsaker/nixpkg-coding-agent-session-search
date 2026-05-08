@@ -6,8 +6,8 @@
     "channel": "github-head",
     "defaultBranch": "main",
     "version": "0.4.2",
-    "rev": "8b651138fd656d9e63ad06d81bf243a1454e72e2",
-    "hash": "sha256-GYnOwHWfO2kipK3pZMycx0gCJM0fhRpmQSy6qZ3uZIk=",
+    "rev": "ced9909c76332e2cf5c926f72fb30b19af9f00ab",
+    "hash": "sha256-fyAG/EwWxhyOABoKQTdM8GqEG8tU5mBiMK2hmPc2ZgE=",
     "siblings": {
       "franken_agent_detection": {
         "owner": "Dicklesworthstone",
@@ -18,14 +18,14 @@
       "frankensqlite": {
         "owner": "Dicklesworthstone",
         "repo": "frankensqlite",
-        "rev": "808fe4a902ee456d3a35701e9399fcd2e5e4652b",
-        "hash": "sha256-vuh0dFRqg2sBL8+R77u6ghNYiC37QCf5ceE/QYXQ45U="
+        "rev": "565158958cc06c39d82be7364b3949790fdca545",
+        "hash": "sha256-Sa06YA8J9lwMsP+P+CSnxABI1kkVTyVg6Csiov19c4s="
       },
       "frankensearch": {
         "owner": "Dicklesworthstone",
         "repo": "frankensearch",
-        "rev": "194ffdc8537620425fb54646c659cd16f56a571a",
-        "hash": "sha256-lmroEsmQ+F32f12I65Gd3W8RTFEncBhknEjC+eLiHWg="
+        "rev": "0581b03940ee9c04af03b06249908d3430a8648a",
+        "hash": "sha256-b3hq7fncrGcsuAjIBhxEG+QmlPsDr457oIYwoxzHSAs="
       },
       "fast_cmaes": {
         "owner": "Dicklesworthstone",
@@ -36,8 +36,8 @@
       "asupersync": {
         "owner": "Dicklesworthstone",
         "repo": "asupersync",
-        "rev": "e1514d43335efd26055643b575801d80d28c0ca0",
-        "hash": "sha256-fM3bEU2jtdXufzMIQ6XnW51wG+tybnmtQryiZrVIjY8="
+        "rev": "5e329713aa6a703b20bd6abb5a7eb9910d44042a",
+        "hash": "sha256-mfT4RAM4B4Slwz6P8jQ2av3VqR+LVx3Z99Juq6tbzT0="
       },
       "toon_rust": {
         "owner": "Dicklesworthstone",
@@ -48,8 +48,8 @@
       "frankentui": {
         "owner": "Dicklesworthstone",
         "repo": "frankentui",
-        "rev": "10b4ff2a030733ddb1d2a3d171e3bc932b580c8f",
-        "hash": "sha256-Si8oNMCVGlH4FNQ56Rp+z5DrYgwr/gZE4dlXcV4a1no="
+        "rev": "478200a31ccc17be51d106d2ebcddd87857cd6be",
+        "hash": "sha256-iYiaxGM+R8/KG/HFBFZtD/0IwuuhHKN3OOY6D9Ik8iA="
       }
     }
   },
