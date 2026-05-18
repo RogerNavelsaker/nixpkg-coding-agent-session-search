@@ -6,8 +6,8 @@
     "channel": "github-head",
     "defaultBranch": "main",
     "version": "0.4.8",
-    "rev": "2f49411e80098fca128414055a1a6e922cd1cd2e",
-    "hash": "sha256-H95W0nhBrv2ZOcxMR3l0vBt0av2iRLUKfQ8zD887hM0=",
+    "rev": "e7df9383808723cb20cc1404563e72ff140e0423",
+    "hash": "sha256-cUjpM+V1astVm5ih/KCUHrJ36Vzx+RpNCoxaPzp6e/Y=",
     "siblings": {
       "franken_agent_detection": {
         "owner": "Dicklesworthstone",
@@ -36,8 +36,8 @@
       "asupersync": {
         "owner": "Dicklesworthstone",
         "repo": "asupersync",
-        "rev": "e3eccc145b8f96f238fcb709264f0cd811926d3b",
-        "hash": "sha256-xsI9pUvfhW0We/XJ6EHGUsPShus+/LohLczh9FVWXlk="
+        "rev": "7d1e6d0ae643f9b6251d8d2e25253e232e370755",
+        "hash": "sha256-gdTWsAq8eqUzIHoJ2bAD0siPoEJav7dTM2KMLuXe8D8="
       },
       "toon_rust": {
         "owner": "Dicklesworthstone",
