@@ -12,8 +12,8 @@
       "franken_agent_detection": {
         "owner": "Dicklesworthstone",
         "repo": "franken_agent_detection",
-        "rev": "0437f47edeeb81036a2724c8a70ed166e391197b",
-        "hash": "sha256-z0HdgzovmhwLqX9fQlCSL1YGmulJX9uR4cZACTErQCI="
+        "rev": "947e7f925e5ff00b145e063250f46cea01809ca3",
+        "hash": "sha256-06kyIWwO1z8UNwokmcsawPi+DQXT4UDAuucnkeMylpI="
       },
       "frankensqlite": {
         "owner": "Dicklesworthstone",
