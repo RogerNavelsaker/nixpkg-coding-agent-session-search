@@ -6,8 +6,8 @@
     "channel": "github-head",
     "defaultBranch": "main",
     "version": "0.6.16",
-    "rev": "bbc7670e1481353ce6c722d2c9791205c3040c8d",
-    "hash": "sha256-VovculeQj929xRNKVjX+oYxKHzMGESIs+0ImrKoIlFw=",
+    "rev": "6b9e6c205e2057538ab04c55165cfaf37f7ed45b",
+    "hash": "sha256-ryhJSlmXD0PRfqRycznZlWLvCdTLfQnvymF2294LzCU=",
     "siblings": {
       "franken_agent_detection": {
         "owner": "Dicklesworthstone",
@@ -18,14 +18,14 @@
       "frankensqlite": {
         "owner": "Dicklesworthstone",
         "repo": "frankensqlite",
-        "rev": "90526c4a455d99d07a5a69ef61ec4e14952c843c",
-        "hash": "sha256-IkrpiTebe39UtyYX86kWULLPAnEyIAeT+zKAFKPSSEg="
+        "rev": "d1caefb5b40ff433f1fa063c46f1329863f6fb9a",
+        "hash": "sha256-lfUucWNB33XM8fUZZAL458p1phXilTQh0OuMEH8gOL4="
       },
       "frankensearch": {
         "owner": "Dicklesworthstone",
         "repo": "frankensearch",
-        "rev": "21605d36a7bc78396fb50af9c13007200c6c6b65",
-        "hash": "sha256-UEBkyy6fqbovlStlYCD7Zk7blDAOfXDMCuvw8trT5Lw="
+        "rev": "7de9aefa9a0c6c0015a62402bf56de79ca70c446",
+        "hash": "sha256-WCWaERntkB1spm3c/uxHtkW7IUvTgnZ+zQvEe8a1bks="
       },
       "fast_cmaes": {
         "owner": "Dicklesworthstone",
@@ -36,8 +36,8 @@
       "asupersync": {
         "owner": "Dicklesworthstone",
         "repo": "asupersync",
-        "rev": "d40606b362b18218701a66bea2d1e7a5c8b1f251",
-        "hash": "sha256-j3xeju+WDylBSub4x2/9mWRrMwrWOnrWiiYnZ7CWwpI="
+        "rev": "507902a94f9aeb8cf129111d5409f4e4e098a156",
+        "hash": "sha256-ItG54f+H6Qgt90tG1iezbX3jqaTxv1mrJ4azL3W3K4c="
       },
       "toon_rust": {
         "owner": "Dicklesworthstone",
@@ -48,8 +48,8 @@
       "frankentui": {
         "owner": "Dicklesworthstone",
         "repo": "frankentui",
-        "rev": "27eced5fe2c9ff4565706844512744c61d11a32c",
-        "hash": "sha256-JB9NeTHWNhORm6XaR5a1YMVm+/K9xxj0D9mM5LQoEFU="
+        "rev": "12c2a724f6f3af7bdc6a123360a7bcce7913a398",
+        "hash": "sha256-4z44TRRV3EJPSxGGdC7Z44p3MUpuJ3Jg4yXjNq6Gng0="
       }
     }
   },
