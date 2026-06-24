@@ -5,9 +5,9 @@
     "repo": "coding_agent_session_search",
     "channel": "github-head",
     "defaultBranch": "main",
-    "version": "0.6.16",
-    "rev": "f8f37660dc4910008b6b5bf159e04507b02206fd",
-    "hash": "sha256-CT47u7aQJh1X7y3DH51M+fqYeNhsGZKyLV04tFgJHaU=",
+    "version": "0.6.17",
+    "rev": "8ce30a416e4e88349a5eb955c38ad2a2c0adf771",
+    "hash": "sha256-XqAl9pWjuJjkDhX/UZI92mFGKfwpOYA1PaGL9HVsqCg=",
     "siblings": {
       "franken_agent_detection": {
         "owner": "Dicklesworthstone",
@@ -24,8 +24,8 @@
       "frankensearch": {
         "owner": "Dicklesworthstone",
         "repo": "frankensearch",
-        "rev": "d101d38d16758c619c394163ae6e0f82ea66a55e",
-        "hash": "sha256-5SllJy756Biag21MPPRSg7nl9hsdUBwcWNx2u2oRVjA="
+        "rev": "a2f0db7f4eb0d8df5c68a4f21de2d43d1b327db8",
+        "hash": "sha256-0wFFBqgw/mIqnkmm0C6M5af5srTMZyhpY98v22jrb4U="
       },
       "fast_cmaes": {
         "owner": "Dicklesworthstone",
@@ -55,7 +55,7 @@
   },
   "package": {
     "repo": "coding-agent-session-search",
-    "version": "0.6.16"
+    "version": "0.6.17"
   },
   "binary": {
     "name": "cass"
