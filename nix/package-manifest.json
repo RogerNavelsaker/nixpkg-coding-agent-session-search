@@ -12,20 +12,20 @@
       "franken_agent_detection": {
         "owner": "Dicklesworthstone",
         "repo": "franken_agent_detection",
-        "rev": "476cfce42d85d32d676398d3205739fa67454ffe",
-        "hash": "sha256-2/FM/gGVzVfcELly+AKsDMHmU5FpKaICnGul1fYYR4Q="
+        "rev": "6d75cff4ecd4bc7324cd3c0595cafc03fb5a638f",
+        "hash": "sha256-5adp4cnx/6jAhV5wLuykFSnNFiSjk+GH6linXVt5dsY="
       },
       "frankensqlite": {
         "owner": "Dicklesworthstone",
         "repo": "frankensqlite",
-        "rev": "2c9b40ef5ab1ff2c3dabd3d039e8fd7dc1fc8867",
-        "hash": "sha256-Qry5x6WtnosOHmDZ0oI98jeawiQUmBnzddXlYj3hRRs="
+        "rev": "5ffc79ea3da3f560e07358f836d55a2f9c8803bd",
+        "hash": "sha256-TOH/B+Wl751G+bBmVOXFq2iQVh1677iWWygTan3+tIQ="
       },
       "frankensearch": {
         "owner": "Dicklesworthstone",
         "repo": "frankensearch",
-        "rev": "99197a8f291c4de98c8dcbc9249790d7cc4799ba",
-        "hash": "sha256-hDa/JCXngcmRMO1FP8JmUbiyZwqjsNO3nZvG6r9XuqM="
+        "rev": "44799214cae38ea2c797732504fd0a3332ef302f",
+        "hash": "sha256-uwD+2OX67RbkDtuFNN9UquSsiMcjvPUiA8vGAUsPaX4="
       },
       "fast_cmaes": {
         "owner": "Dicklesworthstone",
@@ -36,8 +36,8 @@
       "asupersync": {
         "owner": "Dicklesworthstone",
         "repo": "asupersync",
-        "rev": "78c2582419d449e05044fff387bfe0f7cc08a000",
-        "hash": "sha256-v3J8FU+heBgEE+S6dJhWcu9RNSilCIbr6+w2x1U+Ocs="
+        "rev": "22a757efcffaa13f2c1834901e488955c0d612d4",
+        "hash": "sha256-VLnE39FVMgaoyFqRdSQQmq9K4XievvkmnoTPC9bRvk0="
       },
       "toon_rust": {
         "owner": "Dicklesworthstone",
@@ -48,8 +48,8 @@
       "frankentui": {
         "owner": "Dicklesworthstone",
         "repo": "frankentui",
-        "rev": "5711b45044029ea48c20e09033744285392bfcfe",
-        "hash": "sha256-p5LyTALP8pC60+inWeNwmwQ4pxVmHXJF7pQaJpjoBpM="
+        "rev": "e43b7aebca2b3ab98f41a6ac948d4cb0cabdcab1",
+        "hash": "sha256-3wi8rvZtrphOcKlAdYbzSkj3gBfnT6j46PUnbjqAt40="
       }
     }
   },
