@@ -5,9 +5,9 @@
     "repo": "coding_agent_session_search",
     "channel": "github-head",
     "defaultBranch": "main",
-    "version": "0.6.20",
-    "rev": "2247e728320e0cbac802037e8ece69ad5ae2f813",
-    "hash": "sha256-SXOj+idXsBCw7y9H7jn8y0MufUjhjiwiZjnyZBy29QA=",
+    "version": "0.6.21",
+    "rev": "a84bc4f9b4e2ff78ff7e9a844a2dce4c608681bc",
+    "hash": "sha256-bQpmmO/qaKa2fprde9V2sb5oNiIk2uaoRgAgMniVKLQ=",
     "siblings": {
       "franken_agent_detection": {
         "owner": "Dicklesworthstone",
@@ -18,14 +18,14 @@
       "frankensqlite": {
         "owner": "Dicklesworthstone",
         "repo": "frankensqlite",
-        "rev": "3baf25154e5187736576a3b10dc4dc198e4b6d02",
-        "hash": "sha256-EoFbbS25PEMzRaV4S1kxgAZCV4lwWo1y2xaLPSzm5Nc="
+        "rev": "fcb4a87a992602a91822141cf27aa3d8af156b24",
+        "hash": "sha256-SLWFH57wHcRDWJ/rbKGJVkb7ZV64Yr7Gx3iUrygWwzk="
       },
       "frankensearch": {
         "owner": "Dicklesworthstone",
         "repo": "frankensearch",
-        "rev": "3ac13296a4382e7d433c234b8a37e727f31fa125",
-        "hash": "sha256-nNvio5nSLNjmSTJlZOE2i2qecPJjQrYvtOInorHzxq8="
+        "rev": "738fffbddbee6a282bd0002081240a387091230e",
+        "hash": "sha256-MZwm/tDgn5BX/DTueU0hmRyfono6Mtv3nC1L2m6Gd/A="
       },
       "fast_cmaes": {
         "owner": "Dicklesworthstone",
@@ -36,8 +36,8 @@
       "asupersync": {
         "owner": "Dicklesworthstone",
         "repo": "asupersync",
-        "rev": "a68af3c63decacf55eefe4b0e0d7b953158ad239",
-        "hash": "sha256-2zJE1RN6p21ZtvbB9N3FqHID9T9u4Bw10D/U3a+sk44="
+        "rev": "e5c6856159fbe236abb5bcfc5b7ad3ad8bfac766",
+        "hash": "sha256-eXU2Joy7D4QXTZ7+EIcYvJGUyfxYcB3ND1DkKG8j8E4="
       },
       "toon_rust": {
         "owner": "Dicklesworthstone",
@@ -48,14 +48,14 @@
       "frankentui": {
         "owner": "Dicklesworthstone",
         "repo": "frankentui",
-        "rev": "229e1f7fb422371fe29cc3477551eb2266f8baff",
-        "hash": "sha256-w5hJS3G99ityxe6/d+fBJDq9DUHwqolssqYgYPoIecU="
+        "rev": "ffdf760732eab19446955d4ea261e6b3efe8b10e",
+        "hash": "sha256-8d2XN8iTviE2AIMBY7/bYuAqPSl9mIooDydL+TRtCgg="
       }
     }
   },
   "package": {
     "repo": "coding-agent-session-search",
-    "version": "0.6.20"
+    "version": "0.6.21"
   },
   "binary": {
     "name": "cass"
