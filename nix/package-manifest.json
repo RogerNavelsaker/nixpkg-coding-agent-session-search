@@ -5,27 +5,27 @@
     "repo": "coding_agent_session_search",
     "channel": "github-head",
     "defaultBranch": "main",
-    "version": "0.6.24",
-    "rev": "6091b475145f72319cf7a2cd38ab8965ff4d25d5",
-    "hash": "sha256-8eBaHPuSCQ2SN8gM+LLHHwuJ4DVq/JCvqul44xqe4N4=",
+    "version": "0.6.25",
+    "rev": "ae33e31986aa469d32a7202dc1da6adf39041621",
+    "hash": "sha256-VIbbe/HosC3vfE1PrkUWCbYwFOY2y/2kCQYgK2Xt5hE=",
     "siblings": {
       "franken_agent_detection": {
         "owner": "Dicklesworthstone",
         "repo": "franken_agent_detection",
-        "rev": "57d2789e8d03f6e4b75b0a1a9a5709fc8b290d19",
-        "hash": "sha256-TwvQp4a3m0jg2SJbS0WmSjz5WjDM11hpI8JGqzlLOc8="
+        "rev": "f68fc8bb0efe8027a99531b90c555a77bc6fabd7",
+        "hash": "sha256-XC1RhSBRmaMSTCmY6Ka6y1M1CabypiF6FySxHdCP8H4="
       },
       "frankensqlite": {
         "owner": "Dicklesworthstone",
         "repo": "frankensqlite",
-        "rev": "6fee9ba23d42e61537884597ba14fe99dca29a14",
-        "hash": "sha256-gOCmkK7xJo4D4+pwT+mQrJQN/qk8LVC+9ZbMaKN9sY0="
+        "rev": "d910e198b5f039ae79f456a41b38e47f27c39d04",
+        "hash": "sha256-LQKn8Io8dq3JYh4zIcwJWhJxCgrdiX6/x8PGGaArmAQ="
       },
       "frankensearch": {
         "owner": "Dicklesworthstone",
         "repo": "frankensearch",
-        "rev": "ad0326ed055503bff4e6e9e1c8423007fd7ef790",
-        "hash": "sha256-4M8t2j8iuCjmXYlrKvG0SJb4kn12zb2sCbh5nwNStsE="
+        "rev": "e5a30be72f3149b7efe1b9ac13266b2a66c8691d",
+        "hash": "sha256-L/uDCvSlBmAMzIw3S8S8zFJWROguLEcSni13ZmFj7/k="
       },
       "fast_cmaes": {
         "owner": "Dicklesworthstone",
@@ -36,8 +36,8 @@
       "asupersync": {
         "owner": "Dicklesworthstone",
         "repo": "asupersync",
-        "rev": "d9883d90ee3d106dee6cea3d97ff7425d7465d8e",
-        "hash": "sha256-7ZpnUQpPBDHZ/nW4SzzL/HJ+pnQJJsLT7xvnFD64DD8="
+        "rev": "3abbfd761922ed1822c1bfffbf023c8f2e319096",
+        "hash": "sha256-FvDR/CHTitmqwnTm8teYdl2p8nUKsmcEwVleMLUW6AU="
       },
       "toon_rust": {
         "owner": "Dicklesworthstone",
@@ -55,7 +55,7 @@
   },
   "package": {
     "repo": "coding-agent-session-search",
-    "version": "0.6.24"
+    "version": "0.6.25"
   },
   "binary": {
     "name": "cass"
