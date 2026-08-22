@@ -6,8 +6,8 @@
     "channel": "github-head",
     "defaultBranch": "main",
     "version": "0.6.25",
-    "rev": "048db6c4e53805279759db18124635c6ec1bec7b",
-    "hash": "sha256-ZAm/ZRJ4wrZLyVy/Favi3JIuer9p6MXZZvTKgbcfQKM=",
+    "rev": "b6f22a570cac73a27c8ef04918b9d2ef522cc270",
+    "hash": "sha256-G+q8T7cmbZ/Az9XAwVi+J+Uv5ZmYDkRoDH9cE8EX6XM=",
     "siblings": {
       "franken_agent_detection": {
         "owner": "Dicklesworthstone",
@@ -18,14 +18,14 @@
       "frankensqlite": {
         "owner": "Dicklesworthstone",
         "repo": "frankensqlite",
-        "rev": "b9e55450bc3ea4af19cec4935fa2427fbffbe30b",
-        "hash": "sha256-cKVYYFRAs/GGNkmyG1bS3IqZgsXWCK3c8kaqOOAPVeE="
+        "rev": "24154b87030f58ce9802ec5b965aab2319817241",
+        "hash": "sha256-ifYcXF7f/jD4C0vFXVYFrAgLeRFeyFKiEGyiVV3Ndsg="
       },
       "frankensearch": {
         "owner": "Dicklesworthstone",
         "repo": "frankensearch",
-        "rev": "2ab871398be6f6f0d9f2277cc19d48305f35d06c",
-        "hash": "sha256-BUhlTdlT2PhsgZOjLt+Xf0ME8XPXIZpbXtNTNVupoac="
+        "rev": "03d26350c5af6d10e5720f5aa3d267d2fe562524",
+        "hash": "sha256-uiEtTjJ/+3Q3hSMlt3ri4JRob2QyB2Ujww5mZ0agZaM="
       },
       "fast_cmaes": {
         "owner": "Dicklesworthstone",
@@ -36,8 +36,8 @@
       "asupersync": {
         "owner": "Dicklesworthstone",
         "repo": "asupersync",
-        "rev": "9e07b33b62361af5f7532d01345e4b9d3d76cdce",
-        "hash": "sha256-Fh4g2eRJw5ETk/tOcFrjjlxcEjj7Rer9UZR5McOUjh4="
+        "rev": "76c9363726b9730f10210b995250f08b44fbc62e",
+        "hash": "sha256-aAeBL+A7tlxKbbf8i+cNzRADHNQAOW6ek+lh6AMpbHY="
       },
       "toon_rust": {
         "owner": "Dicklesworthstone",
@@ -48,8 +48,8 @@
       "frankentui": {
         "owner": "Dicklesworthstone",
         "repo": "frankentui",
-        "rev": "6e59982d0611d247ede45bee7e96f5f37a0c2026",
-        "hash": "sha256-eqLjB7tu0is2BFbla0J1L+oDj49ICU1iQlan2QZFmiI="
+        "rev": "535c3c3b4f99d3475f7247e51a9467e7b61c0995",
+        "hash": "sha256-rvRyxpDHNRm/H/O7kajykNMohWIE5UwbwFdnNiIRrrQ="
       }
     }
   },
