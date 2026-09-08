@@ -6,8 +6,8 @@
     "channel": "github-head",
     "defaultBranch": "main",
     "version": "0.7.1",
-    "rev": "9ff514fe2f0c1f47eb536e03872baf3a39d24353",
-    "hash": "sha256-YXsbi4gtTIbsWKcKuuQao7pL4eCZXzdo3LWt0F+p62k=",
+    "rev": "dbe940c7d61d33d2f3ac4880e32d39d6fc4b620c",
+    "hash": "sha256-Lt9zQ7AmStgJJQKYqjRakU12zLXvwlEh8T7yKvLNbYs=",
     "siblings": {
       "franken_agent_detection": {
         "owner": "Dicklesworthstone",
@@ -18,14 +18,14 @@
       "frankensqlite": {
         "owner": "Dicklesworthstone",
         "repo": "frankensqlite",
-        "rev": "c9825f1573bc49d407049b51d755a8d5266ac1ac",
-        "hash": "sha256-P66mOnsLI32XVYCeEMdLq8eB/ncY9BfYvaHjo6fnmn4="
+        "rev": "135897529956fc59eaafddececdba3807000966e",
+        "hash": "sha256-vr/b4B00PC0yMvw1vyRshcFacFknVFSsbsBj0hv4JkQ="
       },
       "frankensearch": {
         "owner": "Dicklesworthstone",
         "repo": "frankensearch",
-        "rev": "19c57fd7eba42fca1734a92704392420d1874889",
-        "hash": "sha256-AdNz/3z/jZrjPnEOTvIzIDFCJX7T4YfR6CqF4iEO778="
+        "rev": "54d1dc384fa1e3cb72460271d6a0c7a9d1710dd2",
+        "hash": "sha256-qQWN3PqI+nzHiqbcsbXNBhvk6myD4nB4S58tx2ZO0SQ="
       },
       "fast_cmaes": {
         "owner": "Dicklesworthstone",
@@ -36,8 +36,8 @@
       "asupersync": {
         "owner": "Dicklesworthstone",
         "repo": "asupersync",
-        "rev": "cabf1097d2ecdc05ae55c2c2830d00c0f4f21719",
-        "hash": "sha256-Y6pt8XMT2u3LeXnOxKcbyskcJPNTYihoVrDszMy+LGA="
+        "rev": "6ad671d28c7647134154cffeb7e7fc89db93a698",
+        "hash": "sha256-UbrFmURSOTffMnCcxdb+ORhtmp4n0Cqu6UlkyJ1uzSc="
       },
       "toon_rust": {
         "owner": "Dicklesworthstone",
@@ -48,8 +48,8 @@
       "frankentui": {
         "owner": "Dicklesworthstone",
         "repo": "frankentui",
-        "rev": "1297697c832c1f4eee8ddc03532a53f81b87cc4e",
-        "hash": "sha256-uYBuKEFbIcfNBFwwiytqjMO96ndeLWz5iFDYKsndLuQ="
+        "rev": "d1ad3daac6a2c9be93f9eea86c94381b8ecb8fa7",
+        "hash": "sha256-n8BjNNwGewGPxEN2h4ZKpxKwsNOsPK61741xfF4CNCs="
       }
     }
   },
