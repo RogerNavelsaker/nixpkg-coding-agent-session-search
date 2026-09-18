@@ -6,8 +6,8 @@
     "channel": "github-head",
     "defaultBranch": "main",
     "version": "0.8.0",
-    "rev": "fb8754bba6e55be0f3fe53a294f130880dcb5ad5",
-    "hash": "sha256-UXgs3HDyVPpqiSy1kcaWFv8JM2nj5aUXGnutNTuokpA=",
+    "rev": "140e3492d2a35403f48cc4d4c171a9e6de88765b",
+    "hash": "sha256-sCIhEykI+GwltIkDkc42n3vrOpyA1aZeBitnksdb9ik=",
     "siblings": {
       "franken_agent_detection": {
         "owner": "Dicklesworthstone",
@@ -18,14 +18,14 @@
       "frankensqlite": {
         "owner": "Dicklesworthstone",
         "repo": "frankensqlite",
-        "rev": "71b1a493af91cbca7fcbed27b6685dd1103e2a22",
-        "hash": "sha256-AYSX2fnJvo+AC5RKGQFaa+qHGrYc8rl/7z/U2TAhX+8="
+        "rev": "dd7e7128fd9ac910e57e0aec7106a9b523880b90",
+        "hash": "sha256-MhgixeYdI3vg0fWGQ/j7RgtS1V2Drpc4uQoXRZVTSsY="
       },
       "frankensearch": {
         "owner": "Dicklesworthstone",
         "repo": "frankensearch",
-        "rev": "2de4b7f529670c9aad1a676f9641210276aff1fb",
-        "hash": "sha256-zcyGloSjcIsaXseTTiVBpWynMG9hyklomTgZZa776xM="
+        "rev": "18953a0b66c75f457b0941c448a46b984da98fd0",
+        "hash": "sha256-jlOQCnbD77ijPKHI1ZrAgwelb2to9volHg0dYajaExo="
       },
       "fast_cmaes": {
         "owner": "Dicklesworthstone",
@@ -36,8 +36,8 @@
       "asupersync": {
         "owner": "Dicklesworthstone",
         "repo": "asupersync",
-        "rev": "b4c7127c76189efb8163f9739c2a73e6729a7eb3",
-        "hash": "sha256-cocQ09gQ5++5Um0GbQ4gYBEGGrDpglSVPVYL6E3Buj8="
+        "rev": "8d96628d50403e8a67c1054632a50ce5134d8fca",
+        "hash": "sha256-dxvhJySnNp1lQn/1ssLRNKa1b4lT8lDGkesFRwMgbP0="
       },
       "toon_rust": {
         "owner": "Dicklesworthstone",
@@ -48,8 +48,8 @@
       "frankentui": {
         "owner": "Dicklesworthstone",
         "repo": "frankentui",
-        "rev": "afed7a89e0b10d1fee91d1bb5344bf4229f33ee8",
-        "hash": "sha256-DzkfOFcUC/ePVnfvN++1naaPUpaOxX8v9/wVuZV/5kY="
+        "rev": "07ddaf4939493cd5abb3cc17a409b29b80201ad3",
+        "hash": "sha256-6vFegdm5QEHJ4WpPiakMfvhE2aZmNdJztLc3mCdW+ZA="
       }
     }
   },
