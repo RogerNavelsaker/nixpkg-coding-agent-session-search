@@ -105,9 +105,17 @@ tru = { path = "./siblings/toon_rust" }
 
 [patch."https://github.com/Dicklesworthstone/frankentui"]
 ftui = { path = "./siblings/frankentui/crates/ftui" }
-ftui-runtime = { path = "./siblings/frankentui/crates/ftui-runtime" }
-ftui-tty = { path = "./siblings/frankentui/crates/ftui-tty" }
+ftui-a11y = { path = "./siblings/frankentui/crates/ftui-a11y" }
+ftui-backend = { path = "./siblings/frankentui/crates/ftui-backend" }
+ftui-core = { path = "./siblings/frankentui/crates/ftui-core" }
 ftui-extras = { path = "./siblings/frankentui/crates/ftui-extras" }
+ftui-i18n = { path = "./siblings/frankentui/crates/ftui-i18n" }
+ftui-layout = { path = "./siblings/frankentui/crates/ftui-layout" }
+ftui-render = { path = "./siblings/frankentui/crates/ftui-render" }
+ftui-runtime = { path = "./siblings/frankentui/crates/ftui-runtime" }
+ftui-style = { path = "./siblings/frankentui/crates/ftui-style" }
+ftui-text = { path = "./siblings/frankentui/crates/ftui-text" }
+ftui-tty = { path = "./siblings/frankentui/crates/ftui-tty" }
 ftui-widgets = { path = "./siblings/frankentui/crates/ftui-widgets" }
 EOF
 
@@ -116,6 +124,16 @@ EOF
     cat >> Cargo.toml <<EOF
 
 [patch.crates-io]
+ftui-a11y = { path = "./siblings/frankentui/crates/ftui-a11y" }
+ftui-backend = { path = "./siblings/frankentui/crates/ftui-backend" }
+ftui-core = { path = "./siblings/frankentui/crates/ftui-core" }
+ftui-i18n = { path = "./siblings/frankentui/crates/ftui-i18n" }
+ftui-layout = { path = "./siblings/frankentui/crates/ftui-layout" }
+ftui-render = { path = "./siblings/frankentui/crates/ftui-render" }
+ftui-runtime = { path = "./siblings/frankentui/crates/ftui-runtime" }
+ftui-style = { path = "./siblings/frankentui/crates/ftui-style" }
+ftui-text = { path = "./siblings/frankentui/crates/ftui-text" }
+ftui-tty = { path = "./siblings/frankentui/crates/ftui-tty" }
 ftui-widgets = { path = "./siblings/frankentui/crates/ftui-widgets" }
 EOF
 
