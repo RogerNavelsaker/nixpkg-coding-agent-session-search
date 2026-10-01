@@ -130,7 +130,7 @@ EOF
     sed -i 's|json5 = "1.3"|json5 = "0.4.1"|g' siblings/frankensqlite/crates/fsqlite-ext-json/Cargo.toml
 
     # Downgrade lru in ftui-text to match the older Cargo.lock version
-    sed -i 's|lru = "0.17.0"|lru = "0.16.4"|g' siblings/frankentui/crates/ftui-text/Cargo.toml
+    sed -i 's|lru = "0.18.4"|lru = "0.16.4"|g' siblings/frankentui/crates/ftui-text/Cargo.toml
 
     # Keep the patched widget crate compatible with ftui's locked 0.5 dependency.
     sed -i '0,/^version = "0.9.0"$/s//version = "0.5.0"/' siblings/frankentui/crates/ftui-widgets/Cargo.toml
