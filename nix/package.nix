@@ -108,6 +108,7 @@ ftui = { path = "./siblings/frankentui/crates/ftui" }
 ftui-runtime = { path = "./siblings/frankentui/crates/ftui-runtime" }
 ftui-tty = { path = "./siblings/frankentui/crates/ftui-tty" }
 ftui-extras = { path = "./siblings/frankentui/crates/ftui-extras" }
+ftui-widgets = { path = "./siblings/frankentui/crates/ftui-widgets" }
 EOF
 
     # Patch siblings that have relative paths to other repos
