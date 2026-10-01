@@ -173,7 +173,8 @@ rustPlatform.buildRustPackage {
 
   cargoBuildFlags =
     (lib.optionals (manifest.binary ? package) [ "-p" manifest.binary.package ])
-    ++ [ "--bin=${builtBinary}" ];
+    ++ [ "--bin=${builtBinary}" "--ignore-rust-version" ];
+  cargoCheckFlags = [ "--ignore-rust-version" ];
 
   nativeBuildInputs = [ lld makeWrapper perl pkg-config ];
   buildInputs = [ onnxruntime openssl ];
