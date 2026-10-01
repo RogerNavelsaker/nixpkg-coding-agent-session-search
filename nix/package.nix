@@ -209,7 +209,7 @@ rustPlatform.buildRustPackage {
   # By using cargoHash = lib.fakeHash, we trigger a vendoring phase
   # Since all git dependencies were patched and their sources removed from Cargo.lock,
   # Cargo will vendor the registry dependencies and use the local paths for the rest.
-  cargoHash = "sha256-8jBv7cd5pjSCCWaKmgo327SNai/gAIV7/fmUa7nuhvk=";
+  cargoHash = "sha256-6EApfqOydImGkH0sMAH48OQAO5aGyt9uzhPteKff1kY=";
 
   cargoBuildFlags =
     (lib.optionals (manifest.binary ? package) [ "-p" manifest.binary.package ])
