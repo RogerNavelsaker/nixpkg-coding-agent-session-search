@@ -133,7 +133,7 @@ EOF
     sed -i 's|lru = "0.17.0"|lru = "0.16.4"|g' siblings/frankentui/crates/ftui-text/Cargo.toml
 
     # Replace the unstable integer API used by ftui-widgets with its stable equivalent.
-    sed -i 's/\([[:alnum:]_][[:alnum:]_]*\)\.isolate_lowest_one()/\1 \& \1.wrapping_neg()/g' siblings/frankentui/crates/ftui-widgets/src/fenwick.rs
+    python3 -c 'from pathlib import Path; p = Path("siblings/frankentui/crates/ftui-widgets/src/fenwick.rs"); s = p.read_text(); assert "x.isolate_lowest_one()" in s; p.write_text(s.replace("x.isolate_lowest_one()", "x & x.wrapping_neg()"))'
 
     # Patch Cargo.lock to remove git sources so the Nix vendor script treats them as path dependencies
     python3 -c '
