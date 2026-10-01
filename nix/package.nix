@@ -111,6 +111,14 @@ ftui-extras = { path = "./siblings/frankentui/crates/ftui-extras" }
 ftui-widgets = { path = "./siblings/frankentui/crates/ftui-widgets" }
 EOF
 
+    # ftui-widgets is recorded as a crates.io dependency in the upstream lockfile;
+    # patch that source as well as the frankentui git dependencies above.
+    cat >> Cargo.toml <<EOF
+
+[patch.crates-io]
+ftui-widgets = { path = "./siblings/frankentui/crates/ftui-widgets" }
+EOF
+
     # Patch siblings that have relative paths to other repos
     # frankensearch/tools/optimize_params/Cargo.toml expects fast_cmaes at ../../../fast_cmaes
     sed -i 's|\.\./\.\./\.\./fast_cmaes|../../../fast_cmaes|g' siblings/frankensearch/tools/optimize_params/Cargo.toml
