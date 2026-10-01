@@ -138,8 +138,9 @@ EOF
     # Match dependency versions available in the offline Cargo vendor tree.
     find siblings/frankentui -name Cargo.toml -exec sed -i 's|bitflags = "[^\"]*2.13.2"|bitflags = "2.13.1"|g; s|smallvec = "[^\"]*1.16.1"|smallvec = "1.15.2"|g' {} +
 
-    # Replace the unstable integer API used by ftui-widgets with its stable equivalent.
+    # Replace unstable integer APIs used by frankentui with stable equivalents.
     python3 -c 'from pathlib import Path; p = Path("siblings/frankentui/crates/ftui-widgets/src/fenwick.rs"); s = p.read_text(); assert "x.isolate_lowest_one()" in s; p.write_text(s.replace("x.isolate_lowest_one()", "x & x.wrapping_neg()"))'
+    python3 -c 'from pathlib import Path; p = Path("siblings/frankentui/crates/ftui-layout/src/wide_prefix.rs"); s = p.read_text(); assert "value.isolate_lowest_one()" in s; p.write_text(s.replace("value.isolate_lowest_one()", "value & value.wrapping_neg()"))'
 
     # Patch Cargo.lock to remove git sources so the Nix vendor script treats them as path dependencies.
     # Remove the stale lockfile entry so Cargo resolves the patched local crate.
