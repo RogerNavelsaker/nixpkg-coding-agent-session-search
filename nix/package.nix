@@ -123,6 +123,9 @@ EOF
     # Downgrade lru in ftui-text to match the older Cargo.lock version
     sed -i 's|lru = "0.17.0"|lru = "0.16.4"|g' siblings/frankentui/crates/ftui-text/Cargo.toml
 
+    # Replace the unstable integer API used by ftui-widgets with its stable equivalent.
+    sed -i 's/x\.isolate_lowest_one()/x \& x.wrapping_neg()/g' siblings/frankentui/crates/ftui-widgets/src/fenwick.rs
+
     # Patch Cargo.lock to remove git sources so the Nix vendor script treats them as path dependencies
     python3 -c '
 import os
