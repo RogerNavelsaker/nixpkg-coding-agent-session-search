@@ -127,6 +127,7 @@ EOF
 ftui-a11y = { path = "./siblings/frankentui/crates/ftui-a11y" }
 ftui-backend = { path = "./siblings/frankentui/crates/ftui-backend" }
 ftui-core = { path = "./siblings/frankentui/crates/ftui-core" }
+ftui-extras = { path = "./siblings/frankentui/crates/ftui-extras" }
 ftui-i18n = { path = "./siblings/frankentui/crates/ftui-i18n" }
 ftui-layout = { path = "./siblings/frankentui/crates/ftui-layout" }
 ftui-render = { path = "./siblings/frankentui/crates/ftui-render" }
