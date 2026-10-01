@@ -169,7 +169,7 @@ import re
 if os.path.exists("Cargo.lock"):
     with open("Cargo.lock", "r") as f: content = f.read()
     content = re.sub(r"source\s*=\s*\"git\+https://github\.com/Dicklesworthstone/[^\"]*\"\n", "", content)
-    content = re.sub(r"\n\[\[package\]\]\nname = \"ftui-widgets\"\n.*?(?=\n\[\[package\]\])", "", content, flags=re.S)
+    content = re.sub(r"\n\[\[package\]\]\nname = \"ftui-[^\"]+\"\n.*?(?=\n\[\[package\]\])", "", content, flags=re.S)
     with open("Cargo.lock", "w") as f: f.write(content)
 '
 
