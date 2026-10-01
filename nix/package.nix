@@ -132,6 +132,9 @@ EOF
     # Downgrade lru in ftui-text to match the older Cargo.lock version
     sed -i 's|lru = "0.17.0"|lru = "0.16.4"|g' siblings/frankentui/crates/ftui-text/Cargo.toml
 
+    # Keep the patched widget crate compatible with ftui's locked 0.5 dependency.
+    sed -i '0,/^version = "0.9.0"$/s//version = "0.5.0"/' siblings/frankentui/crates/ftui-widgets/Cargo.toml
+
     # Replace the unstable integer API used by ftui-widgets with its stable equivalent.
     python3 -c 'from pathlib import Path; p = Path("siblings/frankentui/crates/ftui-widgets/src/fenwick.rs"); s = p.read_text(); assert "x.isolate_lowest_one()" in s; p.write_text(s.replace("x.isolate_lowest_one()", "x & x.wrapping_neg()"))'
 
