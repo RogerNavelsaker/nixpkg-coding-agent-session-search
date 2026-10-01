@@ -136,14 +136,16 @@ EOF
     python3 -c 'from pathlib import Path; p = Path("siblings/frankentui/crates/ftui-widgets/src/fenwick.rs"); s = p.read_text(); assert "x.isolate_lowest_one()" in s; p.write_text(s.replace("x.isolate_lowest_one()", "x & x.wrapping_neg()"))'
 
     # Patch Cargo.lock to remove git sources so the Nix vendor script treats them as path dependencies.
-    # Remove the stale lockfile entry so Cargo resolves the patched local crate.
+    # The lockfile's old git version (0.2.1) does not match the patched crate (0.5.0),
+    # so update that package entry as well; otherwise Cargo vendors the crates.io copy.
     python3 -c '
 import os
 import re
 if os.path.exists("Cargo.lock"):
     with open("Cargo.lock", "r") as f: content = f.read()
     content = re.sub(r"source\s*=\s*\"git\+https://github\.com/Dicklesworthstone/[^\"]*\"\n", "", content)
-    content = re.sub(r"\n\[\[package\]\]\nname = \"ftui-widgets\"\n.*?(?=\n\[\[package\]\])", "", content, flags=re.S)
+    content = re.sub(r"(name = \"ftui-widgets\"\n)version = \"0\.2\.1\"", r"\1version = \"0.5.0\"", content)
+    content = re.sub(r"(name = \"ftui-widgets\"\nversion = \"0\.5\.0\"\n)source = \"registry\+https://github\.com/rust-lang/crates\.io-index\"\n", r"\1", content)
     with open("Cargo.lock", "w") as f: f.write(content)
 '
 
