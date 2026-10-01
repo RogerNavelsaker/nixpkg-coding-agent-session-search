@@ -114,8 +114,8 @@ EOF
     # frankensearch/tools/optimize_params/Cargo.toml expects fast_cmaes at ../../../fast_cmaes
     sed -i 's|\.\./\.\./\.\./fast_cmaes|../../../fast_cmaes|g' siblings/frankensearch/tools/optimize_params/Cargo.toml
 
-    # Pin vergen to the version in Cargo.lock; newer releases require a newer Rust compiler.
-    sed -i 's|vergen = { version = "\\*"|vergen = { version = "9.1.0"|g' Cargo.toml
+    # Pin vergen to the version supported by the Rust compiler in nixpkgs.
+    sed -i 's|vergen = { version = "[*]"|vergen = { version = "9.1.0"|g' Cargo.toml
 
     # Downgrade json5 in fsqlite-ext-json to match the older Cargo.lock version
     sed -i 's|json5 = "1.3"|json5 = "0.4.1"|g' siblings/frankensqlite/crates/fsqlite-ext-json/Cargo.toml
