@@ -141,6 +141,7 @@ EOF
     # Replace unstable integer APIs used by frankentui with stable equivalents.
     python3 -c 'from pathlib import Path; p = Path("siblings/frankentui/crates/ftui-widgets/src/fenwick.rs"); s = p.read_text(); assert "x.isolate_lowest_one()" in s; p.write_text(s.replace("x.isolate_lowest_one()", "x & x.wrapping_neg()"))'
     python3 -c 'from pathlib import Path; p = Path("siblings/frankentui/crates/ftui-layout/src/wide_prefix.rs"); s = p.read_text(); assert "value.isolate_lowest_one()" in s; p.write_text(s.replace("value.isolate_lowest_one()", "value & value.wrapping_neg()"))'
+    python3 -c 'from pathlib import Path; p = Path("siblings/frankentui/crates/ftui-widgets/src/virtualized.rs"); s = p.read_text(); assert s.count(".isolate_lowest_one()") == 2; s = s.replace("idx.isolate_lowest_one()", "idx & idx.wrapping_neg()").replace("node.isolate_lowest_one()", "node & node.wrapping_neg()"); p.write_text(s)'
 
     # Patch Cargo.lock to remove git sources so the Nix vendor script treats them as path dependencies.
     # Remove the stale lockfile entry so Cargo resolves the patched local crate.
