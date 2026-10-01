@@ -135,6 +135,9 @@ EOF
     # Keep the patched widget crate compatible with ftui's locked 0.5 dependency.
     sed -i '0,/^version = "0.9.0"$/s//version = "0.5.0"/' siblings/frankentui/crates/ftui-widgets/Cargo.toml
 
+    # Match the bitflags version available in the offline Cargo vendor tree.
+    sed -i 's|bitflags = "[^\"]*2.13.2"|bitflags = "2.13.1"|g' siblings/frankentui/crates/ftui-widgets/Cargo.toml
+
     # Replace the unstable integer API used by ftui-widgets with its stable equivalent.
     python3 -c 'from pathlib import Path; p = Path("siblings/frankentui/crates/ftui-widgets/src/fenwick.rs"); s = p.read_text(); assert "x.isolate_lowest_one()" in s; p.write_text(s.replace("x.isolate_lowest_one()", "x & x.wrapping_neg()"))'
 
