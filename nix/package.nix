@@ -145,6 +145,7 @@ if os.path.exists("Cargo.lock"):
     with open("Cargo.lock", "r") as f: content = f.read()
     content = re.sub(r"source\s*=\s*\"git\+https://github\.com/Dicklesworthstone/[^\"]*\"\n", "", content)
     content = re.sub(r"(name = \"ftui-widgets\"\n)version = \"0\\.2\\.1\"", r"\1version = \"0.5.0\"", content)
+    content = re.sub(r"(name = \"ftui-widgets\"\nversion = \"0\\.5\\.0\"\n)source = \"registry\\+https://github\\.com/rust-lang/crates\\.io-index\"\n", r"\1", content)
     with open("Cargo.lock", "w") as f: f.write(content)
 '
 
