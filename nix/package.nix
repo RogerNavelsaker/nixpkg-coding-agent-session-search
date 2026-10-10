@@ -105,28 +105,72 @@ tru = { path = "./siblings/toon_rust" }
 
 [patch."https://github.com/Dicklesworthstone/frankentui"]
 ftui = { path = "./siblings/frankentui/crates/ftui" }
-ftui-runtime = { path = "./siblings/frankentui/crates/ftui-runtime" }
-ftui-tty = { path = "./siblings/frankentui/crates/ftui-tty" }
+ftui-a11y = { path = "./siblings/frankentui/crates/ftui-a11y" }
+ftui-backend = { path = "./siblings/frankentui/crates/ftui-backend" }
+ftui-core = { path = "./siblings/frankentui/crates/ftui-core" }
 ftui-extras = { path = "./siblings/frankentui/crates/ftui-extras" }
+ftui-i18n = { path = "./siblings/frankentui/crates/ftui-i18n" }
+ftui-layout = { path = "./siblings/frankentui/crates/ftui-layout" }
+ftui-render = { path = "./siblings/frankentui/crates/ftui-render" }
+ftui-runtime = { path = "./siblings/frankentui/crates/ftui-runtime" }
+ftui-style = { path = "./siblings/frankentui/crates/ftui-style" }
+ftui-text = { path = "./siblings/frankentui/crates/ftui-text" }
+ftui-tty = { path = "./siblings/frankentui/crates/ftui-tty" }
+ftui-widgets = { path = "./siblings/frankentui/crates/ftui-widgets" }
+EOF
+
+    # ftui-widgets is recorded as a crates.io dependency in the upstream lockfile;
+    # patch that source as well as the frankentui git dependencies above.
+    cat >> Cargo.toml <<EOF
+
+[patch.crates-io]
+ftui-a11y = { path = "./siblings/frankentui/crates/ftui-a11y" }
+ftui-backend = { path = "./siblings/frankentui/crates/ftui-backend" }
+ftui-core = { path = "./siblings/frankentui/crates/ftui-core" }
+ftui-extras = { path = "./siblings/frankentui/crates/ftui-extras" }
+ftui-i18n = { path = "./siblings/frankentui/crates/ftui-i18n" }
+ftui-layout = { path = "./siblings/frankentui/crates/ftui-layout" }
+ftui-render = { path = "./siblings/frankentui/crates/ftui-render" }
+ftui-runtime = { path = "./siblings/frankentui/crates/ftui-runtime" }
+ftui-style = { path = "./siblings/frankentui/crates/ftui-style" }
+ftui-text = { path = "./siblings/frankentui/crates/ftui-text" }
+ftui-tty = { path = "./siblings/frankentui/crates/ftui-tty" }
+ftui-widgets = { path = "./siblings/frankentui/crates/ftui-widgets" }
 EOF
 
     # Patch siblings that have relative paths to other repos
     # frankensearch/tools/optimize_params/Cargo.toml expects fast_cmaes at ../../../fast_cmaes
     sed -i 's|\.\./\.\./\.\./fast_cmaes|../../../fast_cmaes|g' siblings/frankensearch/tools/optimize_params/Cargo.toml
 
+    # Pin vergen to the version in the vendored Cargo registry.
+    python3 -c 'from pathlib import Path; import re; p = Path("Cargo.toml"); p.write_text(re.sub(r"vergen = \{ version = \"[^\"]+\"", "vergen = { version = \"=10.0.3\"", p.read_text()))'
+
     # Downgrade json5 in fsqlite-ext-json to match the older Cargo.lock version
     sed -i 's|json5 = "1.3"|json5 = "0.4.1"|g' siblings/frankensqlite/crates/fsqlite-ext-json/Cargo.toml
 
     # Downgrade lru in ftui-text to match the older Cargo.lock version
-    sed -i 's|lru = "0.17.0"|lru = "0.16.4"|g' siblings/frankentui/crates/ftui-text/Cargo.toml
+    sed -i 's|lru = "0.18.4"|lru = "0.16.4"|g' siblings/frankentui/crates/ftui-text/Cargo.toml
 
-    # Patch Cargo.lock to remove git sources so the Nix vendor script treats them as path dependencies
+    # Keep the patched widget crate compatible with ftui's locked 0.5 dependency.
+    sed -i '0,/^version = "0.9.0"$/s//version = "0.5.0"/' siblings/frankentui/crates/ftui-widgets/Cargo.toml
+
+    # Match dependency versions available in the offline Cargo vendor tree.
+    find siblings/frankentui -name Cargo.toml -exec sed -i 's|bitflags = "[^\"]*2.13.2"|bitflags = "2.13.1"|g; s|smallvec = "[^\"]*1.16.1"|smallvec = "1.15.2"|g' {} +
+
+    # Replace unstable integer APIs used by frankentui with stable equivalents.
+    python3 -c 'from pathlib import Path; p = Path("siblings/frankentui/crates/ftui-widgets/src/fenwick.rs"); s = p.read_text(); assert "x.isolate_lowest_one()" in s; p.write_text(s.replace("x.isolate_lowest_one()", "x & x.wrapping_neg()"))'
+    python3 -c 'from pathlib import Path; p = Path("siblings/frankentui/crates/ftui-layout/src/wide_prefix.rs"); s = p.read_text(); assert "value.isolate_lowest_one()" in s; p.write_text(s.replace("value.isolate_lowest_one()", "value & value.wrapping_neg()"))'
+    python3 -c 'from pathlib import Path; p = Path("siblings/frankentui/crates/ftui-widgets/src/virtualized.rs"); s = p.read_text(); assert s.count(".isolate_lowest_one()") == 2; s = s.replace("idx.isolate_lowest_one()", "idx & idx.wrapping_neg()").replace("node.isolate_lowest_one()", "node & node.wrapping_neg()"); p.write_text(s)'
+
+    # Patch Cargo.lock to remove git sources so the Nix vendor script treats them as path dependencies.
+    # Remove the stale lockfile entry so Cargo resolves the patched local crate.
     python3 -c '
 import os
 import re
 if os.path.exists("Cargo.lock"):
     with open("Cargo.lock", "r") as f: content = f.read()
     content = re.sub(r"source\s*=\s*\"git\+https://github\.com/Dicklesworthstone/[^\"]*\"\n", "", content)
+    content = re.sub(r"\n\[\[package\]\]\nname = \"ftui-[^\"]+\"\n.*?(?=\n\[\[package\]\])", "", content, flags=re.S)
     with open("Cargo.lock", "w") as f: f.write(content)
 '
 
@@ -166,11 +210,12 @@ rustPlatform.buildRustPackage {
   # By using cargoHash = lib.fakeHash, we trigger a vendoring phase
   # Since all git dependencies were patched and their sources removed from Cargo.lock,
   # Cargo will vendor the registry dependencies and use the local paths for the rest.
-  cargoHash = "sha256-6EApfqOydImGkH0sMAH48OQAO5aGyt9uzhPteKff1kY=";
+  cargoHash = "sha256-rWG0dzokIxsyvwcvJs5Vd3tyd9ldDbcBRB4um0Klq00=";
 
   cargoBuildFlags =
     (lib.optionals (manifest.binary ? package) [ "-p" manifest.binary.package ])
-    ++ [ "--bin=${builtBinary}" ];
+    ++ [ "--bin=${builtBinary}" "--ignore-rust-version" ];
+  cargoCheckFlags = [ "--ignore-rust-version" ];
 
   nativeBuildInputs = [ lld makeWrapper perl pkg-config ];
   buildInputs = [ onnxruntime openssl ];
