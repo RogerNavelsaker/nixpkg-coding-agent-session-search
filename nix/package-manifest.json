@@ -6,8 +6,8 @@
     "channel": "github-head",
     "defaultBranch": "main",
     "version": "0.10.0",
-    "rev": "46bbdc8bef57b85a6c8958b368df1fb4d8ceafc4",
-    "hash": "sha256-MK3qwVDtd0Tt15aDdnC/GNy4NoIJ2RgHnI5/tx8YSZw=",
+    "rev": "7fc01958d36727875d7b41752b5216c2cbb2bce9",
+    "hash": "sha256-PqFrGZCaBOwtjuRl/GDlVFIFXMtBVnyse5BKFowdZHk=",
     "siblings": {
       "franken_agent_detection": {
         "owner": "Dicklesworthstone",
@@ -18,14 +18,14 @@
       "frankensqlite": {
         "owner": "Dicklesworthstone",
         "repo": "frankensqlite",
-        "rev": "93770efe16a60891b2f75086165c5846a62bde05",
-        "hash": "sha256-gnsVGnefEPuhag6mpC6S3KuHD3LbLR73fiUxZZ4PQaI="
+        "rev": "ba77d8f2000abcd8037ae2c7b622b8e9d47b347e",
+        "hash": "sha256-wIWcytME1W5qczC4vzhd9mnDuJJkHLfAalIxusy6UOQ="
       },
       "frankensearch": {
         "owner": "Dicklesworthstone",
         "repo": "frankensearch",
-        "rev": "2cb73f09c94e3e1e6279d0f17f578c54b673e051",
-        "hash": "sha256-QlGPDfncys0YxXVoo4PtBnMH9xMuyro8YrazEM+Em0o="
+        "rev": "33d74939a1101b6604c5bb167637ab799599995f",
+        "hash": "sha256-Ba/NCqDf5mt1DoyU4lcAKvyJzfp9+jexG1ntuPzAysk="
       },
       "fast_cmaes": {
         "owner": "Dicklesworthstone",
@@ -36,8 +36,8 @@
       "asupersync": {
         "owner": "Dicklesworthstone",
         "repo": "asupersync",
-        "rev": "d61d410ac2fb8bdc18ac30cf02c4c0d06765eb3b",
-        "hash": "sha256-dKqLVTEHlri/6op4HpMkcdjScPFzyn2jjpOjmMVEmbc="
+        "rev": "2ab5e071c50844314aadc1e09d8c75f2ee6aa159",
+        "hash": "sha256-YT00MUaknj0a66jV4oR15k0Og+gTY3ZEevpbCnRdLyA="
       },
       "toon_rust": {
         "owner": "Dicklesworthstone",
@@ -48,8 +48,8 @@
       "frankentui": {
         "owner": "Dicklesworthstone",
         "repo": "frankentui",
-        "rev": "721c2b0583443ebda787a35796123a6207165e98",
-        "hash": "sha256-n43T3EyDzxmTXhwBOMPEmmVJRZ2d5m/j+Rxe716tSpQ="
+        "rev": "e75fb493be730686289f9dd36a3f3090b45cdf14",
+        "hash": "sha256-oW429Czf4C+B2Ff7niQ0ELhQHDY782QXN+H0fFCTNiE="
       }
     }
   },
