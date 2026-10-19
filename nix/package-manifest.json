@@ -6,8 +6,8 @@
     "channel": "github-head",
     "defaultBranch": "main",
     "version": "0.10.0",
-    "rev": "54bb3812dcaba448edcc0a5eb779c3a19f422ea4",
-    "hash": "sha256-8ctR9BmhJJIl2MPHwUYnf0uL4KEgwrxm8SuTlr/apMI=",
+    "rev": "3de776534029c9f866773af19306fea0d8f40c6f",
+    "hash": "sha256-2KLiiMgYZCxRRnFzDckNrPOAXmDEw5Hi6Qd5L7urDqI=",
     "siblings": {
       "franken_agent_detection": {
         "owner": "Dicklesworthstone",
@@ -18,14 +18,14 @@
       "frankensqlite": {
         "owner": "Dicklesworthstone",
         "repo": "frankensqlite",
-        "rev": "9f0b1429ed719a03ce151b590b83d194d6a985e0",
-        "hash": "sha256-ROEsY6MdWjhyhWtKNX566+TJVszOqnsHFU4uxwKP/CY="
+        "rev": "c5a63ba37475b6a4953c83c542208aa818f63df8",
+        "hash": "sha256-FgKzLGQM9GP/Reakz25fny6EIePvDWFromQCgwa4OgE="
       },
       "frankensearch": {
         "owner": "Dicklesworthstone",
         "repo": "frankensearch",
-        "rev": "e29f5934c293ae6662d6f435d2e98dca9563fd73",
-        "hash": "sha256-GtihAN6SfBXdimakHEp8mRTMehnkPz0YEon/GbYqvIQ="
+        "rev": "eaef67243c7f4c04917bcb07e55debd120924961",
+        "hash": "sha256-uWpAiiknUglG9glwZtDVF2SzuskD6IfPJ8eU7n6lp4k="
       },
       "fast_cmaes": {
         "owner": "Dicklesworthstone",
@@ -36,8 +36,8 @@
       "asupersync": {
         "owner": "Dicklesworthstone",
         "repo": "asupersync",
-        "rev": "9e640ef9a816c4cc29d45f0797d886807600ec61",
-        "hash": "sha256-wJ7pEPYl84jwO7nI78Fm22yh8fMh2KLYdYG6ElAmTOg="
+        "rev": "df86296fd54d4f4e4906afd7280f1ff69bb15b86",
+        "hash": "sha256-sYr8lTs+jgGFqr2h+1m42J7g7MU8al43Pdq4VK3Fn1o="
       },
       "toon_rust": {
         "owner": "Dicklesworthstone",
@@ -48,8 +48,8 @@
       "frankentui": {
         "owner": "Dicklesworthstone",
         "repo": "frankentui",
-        "rev": "6251f7d5f0d08548bd291d18dfdba789d3d7f356",
-        "hash": "sha256-N8q4gG9itHibrA4dEzzMi2Yom2baL0pJ5jZC5iSnvAM="
+        "rev": "c7cb44099f022e5fb117e054cd70a4a803908df3",
+        "hash": "sha256-ifP1O4Xe1bTy4HnDPIEV7loCObxtj8Qi3u3XuGotFeU="
       }
     }
   },
