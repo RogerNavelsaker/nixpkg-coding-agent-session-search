@@ -6,8 +6,8 @@
     "channel": "github-head",
     "defaultBranch": "main",
     "version": "0.10.0",
-    "rev": "5bfcc15ef3e0789e2f0200d5ee2ca7f1e97faa93",
-    "hash": "sha256-QwXx3BKDZ+9T7jiXfqrcOhns8x32crjAwb5NLIM4APE=",
+    "rev": "02117c558313e8ed90b8d3c8ec731228bc100ee2",
+    "hash": "sha256-xg+/lavAXQMEhWMR8B+Jn29U3BKw9L7iwMLk4KqYezE=",
     "siblings": {
       "franken_agent_detection": {
         "owner": "Dicklesworthstone",
