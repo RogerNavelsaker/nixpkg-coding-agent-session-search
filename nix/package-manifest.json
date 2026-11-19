@@ -18,14 +18,14 @@
       "frankensqlite": {
         "owner": "Dicklesworthstone",
         "repo": "frankensqlite",
-        "rev": "375d8e5ee5e5f687458128aa2ebbc50c5065d089",
-        "hash": "sha256-NbyaUpNV0BxdzWkl8vaQ4ethFPSyQfuV0+IIXaSGgWc="
+        "rev": "7e670f4b599fbd7c6352134b9546e522b4860a8c",
+        "hash": "sha256-Vlu7WTJrCkzYdouAyyOrE76tIxytX3wDJZVZseih3Zo="
       },
       "frankensearch": {
         "owner": "Dicklesworthstone",
         "repo": "frankensearch",
-        "rev": "be9b74984185a27a52014ba04ffbc8fcf7da1b7a",
-        "hash": "sha256-KgGuSsGSu39twuIxLylOzC/gLz40KNgNzKAc32kYNnA="
+        "rev": "b4fccecd6ef2eb2f35aeb316c3401b8558bce5f0",
+        "hash": "sha256-srli/M6ZcuGV4Zq4Vk+ZVY9YSYnGrE//Zs3zew0zyN0="
       },
       "fast_cmaes": {
         "owner": "Dicklesworthstone",
