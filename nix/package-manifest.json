@@ -6,8 +6,8 @@
     "channel": "github-head",
     "defaultBranch": "main",
     "version": "0.11.0",
-    "rev": "16dd1cce11d3fb6fb8f65e124096a31b5abafd52",
-    "hash": "sha256-/PZRQwsNouLTqIm62OKONyOjDqRq+UpVs6Zy5CRXwSM=",
+    "rev": "fd0bbecb14c4ae3a78de3fb79aeee7eb7eee2224",
+    "hash": "sha256-J+BnDrn8rXnsImae6NuWXxHo8jOOiiIgpdxIAxDGz0c=",
     "siblings": {
       "franken_agent_detection": {
         "owner": "Dicklesworthstone",
@@ -18,14 +18,14 @@
       "frankensqlite": {
         "owner": "Dicklesworthstone",
         "repo": "frankensqlite",
-        "rev": "695405863ae41dca47de16f11775e26e3d6259c7",
-        "hash": "sha256-WDaz8VscB1J20gIZX6/kZ8vqzy54jFPWT9GJwrUd8w0="
+        "rev": "cba05b928f3a8ca5a34aba86519b0cd9714fcb00",
+        "hash": "sha256-s1NJBCeWOBaWYlqjZ/asI2IBJd/AL1C+4ZlGpdjAdmc="
       },
       "frankensearch": {
         "owner": "Dicklesworthstone",
         "repo": "frankensearch",
-        "rev": "185bc0f1e967d44d75530c25b216cc7d56ec3cfa",
-        "hash": "sha256-sfzVqitksvT1FGNIHsdmVSuM321xgfX1Hy1tvDjk5To="
+        "rev": "abd948ad06208c9af11ce11813e3ae11ba8c0d9d",
+        "hash": "sha256-cgsgwwV3kkf1NErAz1eOL5Nv5LQPdKgKWH3iEWmVsgw="
       },
       "fast_cmaes": {
         "owner": "Dicklesworthstone",
@@ -36,14 +36,14 @@
       "asupersync": {
         "owner": "Dicklesworthstone",
         "repo": "asupersync",
-        "rev": "026435582e610b3555390e3d607ae2c9ddc98ff1",
-        "hash": "sha256-xXc5KApVGZHYoDU7uPt+ugIqk1RJftdbjgvsqDD/XF4="
+        "rev": "b32c5ba663156bb6ee1888f86dfddffa8e8570c5",
+        "hash": "sha256-UVAjNFcY/bmI4NYZ4ntEv3llZixfVWXfKPCoES7GZvE="
       },
       "toon_rust": {
         "owner": "Dicklesworthstone",
         "repo": "toon_rust",
-        "rev": "5be0992fb978faef6f8f1aabc9ea38dbee4ec56f",
-        "hash": "sha256-UrtlH0afhuLOvf63FDW0MDsoRBU5Gk6TO4Z0pMU5008="
+        "rev": "c3e84193e46a2034153c20f29a73aed10a108939",
+        "hash": "sha256-pWAQ65zHg8BM91DAWXtb9rZIkoawTQgGE/HuW5fGZqU="
       },
       "frankentui": {
         "owner": "Dicklesworthstone",
