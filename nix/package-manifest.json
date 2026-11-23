@@ -6,8 +6,8 @@
     "channel": "github-head",
     "defaultBranch": "main",
     "version": "0.11.0",
-    "rev": "8fa49c5eaa2883f5c996db93bfe69efbd1a8328e",
-    "hash": "sha256-wZdpTQhjwJIEGUOHTIm1ckAzNz7I62IpTcMZrEDOeRI=",
+    "rev": "c6a0f6774092037f29670b23764dc1a6481b146a",
+    "hash": "sha256-ZkTim778Jm5MT3Wj6ZyRY8i/PwfcHuhjXsywMB+5zkw=",
     "siblings": {
       "franken_agent_detection": {
         "owner": "Dicklesworthstone",
@@ -18,14 +18,14 @@
       "frankensqlite": {
         "owner": "Dicklesworthstone",
         "repo": "frankensqlite",
-        "rev": "8ad61918f0c4849e81656afea5714a517f527105",
-        "hash": "sha256-EWuPd7eLfbiOni1UZKP9e6fuWIglEAcVUTv2+wN30sc="
+        "rev": "ad675517aaddb9b5999889841aa71c6911b3a4e0",
+        "hash": "sha256-9fsor9JprTX/tG/ZRiSlpFYXfKGgfAfssIVJuzos3rY="
       },
       "frankensearch": {
         "owner": "Dicklesworthstone",
         "repo": "frankensearch",
-        "rev": "5ba13f7254e0d2b017065d2b9ee074dd41fba6f4",
-        "hash": "sha256-rmIGd0X+YO+PgEPbc94P3DpgDhaV9+sGAjrJlojzX/c="
+        "rev": "eea0715d22dbd05a2fa450be70080468cedba009",
+        "hash": "sha256-bzMa30rBgOf8tC1ibPD6iopW/zBOCGwWy+JtEvPvjiM="
       },
       "fast_cmaes": {
         "owner": "Dicklesworthstone",
@@ -36,8 +36,8 @@
       "asupersync": {
         "owner": "Dicklesworthstone",
         "repo": "asupersync",
-        "rev": "b6fb35172ec235f9acf8720a96dea168b05eefba",
-        "hash": "sha256-d1KffyTwyACZLbcXnNfnkonklR5y6OxsYBxJ4YTBmt0="
+        "rev": "cb25b19e13ea7a702e9c64b08593784757581176",
+        "hash": "sha256-0h98fdRWHRV8o86esizkvdlNaT0lVuoNKhgnPqLjRLc="
       },
       "toon_rust": {
         "owner": "Dicklesworthstone",
@@ -48,8 +48,8 @@
       "frankentui": {
         "owner": "Dicklesworthstone",
         "repo": "frankentui",
-        "rev": "11b07d07c4ca469958d3a1a3acb7c1d0a8483b9d",
-        "hash": "sha256-sXj5Amec8uNQC8npeHS6sdkyqgnfaKzqDzMKa93ruiA="
+        "rev": "354f39cd1fa51239f5e4e4b703a83fc480c48e71",
+        "hash": "sha256-TiNP4uSpxAsHqGSSO4QLuK0dKCXmFWw7ueOW8pPIHbA="
       }
     }
   },
